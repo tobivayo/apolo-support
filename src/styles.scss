@@ -1,0 +1,140 @@
+@use '@angular/material' as mat;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Inter', Roboto, "Helvetica Neue", sans-serif; }
+
+$heading-font-family: "'Inter', sans-serif";
+
+$fontConfig: (
+  display-4: mat.define-typography-level(112px, 112px, 300, 'Inter', -0.0134em),
+  display-3: mat.define-typography-level(56px, 56px, 400, 'Inter', -0.0089em),
+  display-2: mat.define-typography-level(45px, 48px, 400, 'Inter', 0.0000em),
+  display-1: mat.define-typography-level(34px, 40px, 400, 'Inter', 0.0074em),
+  headline: mat.define-typography-level(24px, 32px, 400, 'Inter', 0.0000em),
+  title: mat.define-typography-level(20px, 32px, 500, 'Inter', 0.0075em),
+  heading-1: mat.define-typography-level(18px, 32px, 400, 'Inter', 0.0000em),
+  subheading-2: mat.define-typography-level(16px, 28px, 400, 'Inter', 0.0094em),
+  subheading-1: mat.define-typography-level(15px, 24px, 500, 'Inter', 0.0067em),
+  body-2: mat.define-typography-level(14px, 24px, 500, 'Inter', 0.0179em),
+  body-1: mat.define-typography-level(14px, 20px, 400, 'Inter', 0.0179em),
+  button: mat.define-typography-level(14px, 14px, 500, 'Inter', 0.0893em),
+  caption: mat.define-typography-level(12px, 20px, 400, 'Inter', 0.0333em),
+  input: mat.define-typography-level(inherit, 1.125, 400, 'Inter', 1.5px)
+);
+
+@include mat.core();
+
+
+$disabled-gray: #D6D6D6;
+
+$apolo-palette: (
+ 50: #ecf9e5,
+ 100: #E4F5DC,
+ 150: #9c4dcc,
+ 200: #ade394,
+ 300: #89d766,
+ 400: #6acf3f,
+ 500: #6a1b9a,
+ 600: #48c600,
+ 700: #48c600,
+ 800: #48c600,
+ 900: #48c600,
+ contrast: (
+   50: white,
+   100: white,
+   200: white,
+   300: white,
+   400: white,
+   500: white,
+   600: white,
+   700: white,
+   800: white,
+   900: white
+ )
+);
+
+@include mat.core();
+
+$apolo-primary: mat.define-palette($apolo-palette, 500);
+$apolo-accent: mat.define-palette($apolo-palette, 150);
+
+$apolo-warn: mat.define-palette(mat.$red-palette);
+
+
+$apolo-theme: mat.define-light-theme((
+  color: (
+    primary: $apolo-primary,
+    accent: $apolo-accent,
+    warn: $apolo-warn,
+  ),
+  typography: mat.define-typography-config(
+    $font-family: 'Inter'
+  ),
+));
+
+.mat-h1, .mat-headline-5, .mat-typography, .mat-h1, .mat-typography, .mat-headline-5, .mat-typography h1, .mat-typography h2 {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.mat-typography h1{
+  font-family: 'Inter', sans-serif !important;
+  margin: 0;
+}
+
+.mat-typography h2{
+  font-family: 'Inter', sans-serif !important;
+  margin: 0;
+}
+.mat-typography h3{
+  font-family: 'Inter', sans-serif !important;
+  margin: 0;
+}
+.mat-typography h4{
+  font-family: 'Inter', sans-serif !important;
+  margin: 0;
+}
+
+.mat-typography h5{
+  font-family: 'Inter', sans-serif !important;
+  margin: 0;
+}
+
+.mat-typography h6{
+  font-family: 'Inter', sans-serif !important;
+  margin: 0;
+}
+
+.mat-typography p{
+  font-family: 'Inter', sans-serif !important;
+}
+
+.mat-mdc-form-field-input-control {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.mat-mdc-form-field-input-control{
+  font-family: 'Inter', sans-serif !important;
+}
+
+
+:root {
+  --mdc-theme-primary: #6a1b9a; 
+  --mdc-theme-secondary: #43a047; 
+  --mdc-theme-background: #ffffff; 
+  --mdc-theme-surface: #f5f5f5; 
+  --mdc-theme-on-primary: #ffffff; 
+  --mdc-theme-on-secondary: #ffffff; 
+  --mdc-theme-on-background: #000000; 
+  --mdc-theme-on-surface: #000000; 
+}
+
+body.dark-theme {
+  --mdc-theme-primary: #9c4dcc; 
+  --mdc-theme-secondary: #76d275; 
+  --mdc-theme-background: #121212; 
+  --mdc-theme-surface: #1e1e1e; 
+  --mdc-theme-on-primary: #ffffff; 
+  --mdc-theme-on-secondary: #000000; 
+  --mdc-theme-on-background: #ffffff; 
+  --mdc-theme-on-surface: #ffffff; 
+}

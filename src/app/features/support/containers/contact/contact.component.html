@@ -1,0 +1,21 @@
+<ng-container *ngIf="form">
+    <form [formGroup]="form" class="form-container" action="https://formspree.io/contacto@fiesta-apolo.com">
+        <h1>
+            Contactanos!
+        </h1>
+        <hr>
+        <div class="fields-container">
+            <div *ngFor="let field of formConfig.fields" class="field-container" [ngClass]="field.size == 'large' ? 'large-field' : ''">
+                <app-generic-field [formField]="getFormControl(field.key)" [label]="field.label" [type]="field.type" [isRequired]="field.validations.required || false" [isDisabled]="field.isDisabled"></app-generic-field>
+            </div>
+        </div>
+      
+        <div class="buttons-container">
+            <app-button-secondary class="buttons" [label]="'Cancelar'" (btnClick)="clearForm()"></app-button-secondary>
+            <app-button-primary class="buttons" [label]="'Enviar'" [isDisabled]="form.invalid" (btnClick)="submitForm()" type="submit"></app-button-primary>
+        </div>
+
+        <hr>
+        <h5>O mandanos un mail a <a href="mailto:contacto@fiesta-apolo.com?Subject=Consultas Fiesta Apolo" target="_top">{{ ' contacto@fiesta-apolo.com' }}</a></h5>
+    </form>
+</ng-container>

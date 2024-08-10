@@ -1,0 +1,47 @@
+<label>
+    <span>
+        {{ label }}{{ isRequired ? '*' : null}}
+    </span>
+    <ng-container *ngIf="type == 'textarea'; else elseTemplate">
+        <textarea
+            rows="4"
+            [formControl]="formField"
+            [placeholder]="placeholder"
+            [required]="isRequired"
+            [attr.minlength]="minLength"
+            [attr.maxlength]="maxLength"
+            [attr.pattern]="pattern"
+            [attr.minDate]="minDate"
+            [readOnly]="isDisabled"
+            (change)="onChange()"
+            (input)="checkValidators()"
+            [class.is-invalid]="formField.invalid && (formField.dirty || formField.touched)">
+        </textarea>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <input 
+            [formControl]="formField"
+            [type]="type"
+            [placeholder]="placeholder"
+            [required]="isRequired"
+            [attr.minlength]="minLength"
+            [attr.maxlength]="maxLength"
+            [attr.pattern]="pattern"
+            [attr.minDate]="minDate"
+            [readOnly]="isDisabled"
+            (change)="onChange()"
+            (input)="checkValidators()"
+            [class.is-invalid]="formField.invalid && (formField.dirty || formField.touched)">
+    </ng-template>
+    
+</label>
+<div *ngIf="formField.errors && (formField.dirty || formField.touched)" class="error-messages">
+    <span *ngIf="formField.errors['required']">Este campo es requerido.</span>
+    <span *ngIf="formField.errors['minlength']">El campo debe contener al menos {{ minLength }} caracteres.</span>
+    <span *ngIf="formField.errors['maxlength']">El campo debe contenter máximo {{ maxLength }} caracteres.</span>
+    <span *ngIf="formField.errors['pattern']">Formato inválido.</span>
+    <span *ngIf="formField.errors['min']">El valor no puede ser menor a {{ min }}.</span>
+    <span *ngIf="formField.errors['max']">El valor no puede ser menor a {{ max }}.</span>
+    <span *ngIf="formField.errors['minDate']">La fecha no puede ser menor a {{ minDate | date: 'dd-MM-yyyy'}}.</span>
+    <span *ngIf="formField.errors['idTaken']">El ID no es único.</span>
+</div>

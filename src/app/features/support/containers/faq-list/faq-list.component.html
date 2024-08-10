@@ -1,0 +1,7 @@
+<h1>Preguntas Frecuentes</h1>
+<ng-container *ngFor="let question of faqList">
+    <div class="accordion">
+        <app-accordion [title]="question.title" [content]="question.description"></app-accordion>
+    </div>
+</ng-container>
+

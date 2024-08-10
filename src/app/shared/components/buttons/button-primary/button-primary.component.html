@@ -1,0 +1,10 @@
+<button
+  mat-flat-button
+  color="primary"
+  class="{{ size }}"
+  id="flat"
+  [disabled]="isDisabled"
+  (click)="btnClick.emit($event)"
+>
+  {{ label }}
+</button>

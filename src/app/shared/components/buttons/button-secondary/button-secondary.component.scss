@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@import "../../../../../styles.scss";
+@import "../../../../shared/components/buttons/button-shared.scss";
+
+#stroke{
+    transition: border-width 0s;
+    &:enabled{
+        border: 1px solid mat.get-color-from-palette($apolo-palette, 500);
+        &:hover{
+            // border: 2px solid;
+        }
+        &.selected {
+            background-color: mat.get-color-from-palette($apolo-palette, 100);
+            border: 2px solid;
+        }
+    }
+    @include button-shared;
+}

@@ -1,0 +1,31 @@
+.logo-img {
+    height: 50px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+  
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+}
+
+h2 {
+    margin-inline: 0.3rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+

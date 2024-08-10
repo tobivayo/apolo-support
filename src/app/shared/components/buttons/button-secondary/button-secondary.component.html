@@ -1,0 +1,3 @@
+<button mat-stroked-button type='button' color="primary" class="{{size}}" [ngClass]="selected ? 'selected' : ''" id="stroke" [disabled]="isDisabled" (click)="btnClick.emit($event)">
+    {{ label }}
+</button>
